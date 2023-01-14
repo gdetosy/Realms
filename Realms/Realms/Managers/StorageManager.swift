@@ -9,7 +9,29 @@ import Foundation
 import RealmSwift
 
 let realm = try! Realm()
-class StorageManager {
+enum StorageManager {
+    static func deleteList(_ tasksList: TasksList) {
+        do {
+            try realm.write {
+                let tasks = tasksList.task
+
+                realm.delete(tasks)
+                realm.delete(tasksList)
+            }
+        } catch {
+            print("deleteList error: \(error)")
+        }
+    }
+
+    static func saveTasksList(tasksList: TasksList) {
+        do {
+            try realm.write {
+                realm.add(tasksList)
+            }
+        } catch {
+            print("saveTasksList error: \(error)")
+        }
+    }
 
     static func deleteAll() {
         do {
@@ -20,8 +42,22 @@ class StorageManager {
             print("deleteall error: \(error)")
         }
     }
-    static func getAllTasksList()-> Results<TasksList> {
+
+    static func getAllTasksList() -> Results<TasksList> {
         realm.objects(TasksList.self).sorted(byKeyPath: "name")
     }
+
+    static func editList(_ tasksList: TasksList,
+                         newListName: String,
+                         complition: @escaping () -> Void)
+    {
+        do {
+            try realm.write {
+                tasksList.name = newListName
+                complition()
+            }
+        } catch {
+            print("editList error: \(error)")
+        }
+    }
 }
- 
