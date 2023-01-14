@@ -15,6 +15,8 @@
 		96FEB3442972CF1A00B07E30 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 96FEB3432972CF1A00B07E30 /* Realm */; };
 		96FEB3462972CF1A00B07E30 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 96FEB3452972CF1A00B07E30 /* RealmSwift */; };
 		96FEB3492972D09300B07E30 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB3482972D09300B07E30 /* TaskListViewController.swift */; };
+		96FEB34D2972D1E800B07E30 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB34C2972D1E700B07E30 /* ListModel.swift */; };
+		96FEB34F2972D25D00B07E30 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB34E2972D25D00B07E30 /* TaskListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		96FEB3382972CE1000B07E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96FEB33A2972CE1000B07E30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96FEB3482972D09300B07E30 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		96FEB34C2972D1E700B07E30 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		96FEB34E2972D25D00B07E30 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,9 @@
 		96FEB32B2972CE0B00B07E30 /* Realms */ = {
 			isa = PBXGroup;
 			children = (
-				96FEB34B2972D0F400B07E30 /* Controllers */,
+				96FEB3502972D26600B07E30 /* Models */,
 				96FEB34A2972D0D600B07E30 /* Views */,
+				96FEB34B2972D0F400B07E30 /* Controllers */,
 				96FEB3352972CE1000B07E30 /* Assets.xcassets */,
 				96FEB3472972CFA500B07E30 /* Delegates */,
 				96FEB33A2972CE1000B07E30 /* Info.plist */,
@@ -93,6 +98,15 @@
 				96FEB3482972D09300B07E30 /* TaskListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		96FEB3502972D26600B07E30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96FEB34C2972D1E700B07E30 /* ListModel.swift */,
+				96FEB34E2972D25D00B07E30 /* TaskListModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96FEB34F2972D25D00B07E30 /* TaskListModel.swift in Sources */,
 				96FEB3492972D09300B07E30 /* TaskListViewController.swift in Sources */,
 				96FEB32D2972CE0B00B07E30 /* AppDelegate.swift in Sources */,
 				96FEB32F2972CE0B00B07E30 /* SceneDelegate.swift in Sources */,
+				96FEB34D2972D1E800B07E30 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
