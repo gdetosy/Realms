@@ -19,6 +19,7 @@
 		96FEB34F2972D25D00B07E30 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB34E2972D25D00B07E30 /* TaskListModel.swift */; };
 		96FEB3522972EB6800B07E30 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB3512972EB6800B07E30 /* StorageManager.swift */; };
 		96FEB35529741E4600B07E30 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB35429741E4600B07E30 /* TasksTableViewController.swift */; };
+		96FEB3592974339C00B07E30 /* extensions1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEB3582974339C00B07E30 /* extensions1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		96FEB34E2972D25D00B07E30 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		96FEB3512972EB6800B07E30 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		96FEB35429741E4600B07E30 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		96FEB3582974339C00B07E30 /* extensions1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				96FEB3512972EB6800B07E30 /* StorageManager.swift */,
+				96FEB3582974339C00B07E30 /* extensions1.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				96FEB32D2972CE0B00B07E30 /* AppDelegate.swift in Sources */,
 				96FEB3522972EB6800B07E30 /* StorageManager.swift in Sources */,
 				96FEB32F2972CE0B00B07E30 /* SceneDelegate.swift in Sources */,
+				96FEB3592974339C00B07E30 /* extensions1.swift in Sources */,
 				96FEB35529741E4600B07E30 /* TasksTableViewController.swift in Sources */,
 				96FEB34D2972D1E800B07E30 /* ListModel.swift in Sources */,
 			);

@@ -22,7 +22,30 @@ enum StorageManager {
             print("deleteList error: \(error)")
         }
     }
-
+    static func editTask(_ task: Task, newNameTask: String, newNote: String) {
+        try! realm.write {
+            task.name = newNameTask
+            task.note = newNote
+        }
+    }
+    
+    static func deleteTask(_ task: Task) {
+        try! realm.write {
+            realm.delete(task)
+        }
+    }
+    static func makeDone(_ task: Task) {
+        try! realm.write {
+            task.isCompleted.toggle()
+        }
+    }
+    static func saveTask(_ tasksList: TasksList, task: Task) {
+        try! realm.write {
+            tasksList.task.append(task)
+        }
+    }
+    
+    
     static func saveTasksList(tasksList: TasksList) {
         do {
             try realm.write {
