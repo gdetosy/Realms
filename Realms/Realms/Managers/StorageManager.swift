@@ -10,6 +10,7 @@ import RealmSwift
 
 let realm = try! Realm()
 enum StorageManager {
+    
     static func deleteList(_ tasksList: TasksList) {
         do {
             try realm.write {
@@ -22,30 +23,32 @@ enum StorageManager {
             print("deleteList error: \(error)")
         }
     }
+
     static func editTask(_ task: Task, newNameTask: String, newNote: String) {
         try! realm.write {
             task.name = newNameTask
             task.note = newNote
         }
     }
-    
+
     static func deleteTask(_ task: Task) {
         try! realm.write {
             realm.delete(task)
         }
     }
+
     static func makeDone(_ task: Task) {
         try! realm.write {
             task.isCompleted.toggle()
         }
     }
+
     static func saveTask(_ tasksList: TasksList, task: Task) {
         try! realm.write {
             tasksList.task.append(task)
         }
     }
-    
-    
+
     static func saveTasksList(tasksList: TasksList) {
         do {
             try realm.write {
@@ -81,6 +84,37 @@ enum StorageManager {
             }
         } catch {
             print("editList error: \(error)")
+        }
+    }
+}
+
+enum TasksTVCFlow {
+    case addingNewTask
+    case editingTask(task: Task)
+}
+
+struct TxtAlertData {
+    let titleForAlert = "Task value"
+    var messageForAlert: String
+    let doneButtonForAlert: String
+    let cancelTxt = "Cancel"
+
+    let newTextFieldPlaceholder = "New task"
+    let noteTextFieldPlaceholder = "Note"
+
+    var taskName: String?
+    var taskNote: String?
+
+    init(tasksTVCFlow: TasksTVCFlow) {
+        switch tasksTVCFlow {
+            case .addingNewTask:
+                messageForAlert = "Please insert new task value"
+                doneButtonForAlert = "Save"
+            case .editingTask(let task):
+                messageForAlert = "Please edit your task"
+                doneButtonForAlert = "Update"
+                taskName = task.name
+                taskNote = task.note
         }
     }
 }
