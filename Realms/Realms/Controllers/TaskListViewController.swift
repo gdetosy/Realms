@@ -26,7 +26,9 @@ final class TaskListViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    
+   override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    true
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tasksLists.count
     }
